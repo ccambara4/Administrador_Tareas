@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Administrador_Tareas
 {
-    public partial class Procesos : Form
+    public partial class Procesos : MetroFramework.Forms.MetroForm
     {
         private List<ProcesoEstado> estados = new List<ProcesoEstado>();
         private bool ejecucionEnCurso = false;
@@ -23,7 +23,7 @@ namespace Administrador_Tareas
 
         }
 
-        private void crearEstadoButton_Click(object sender, EventArgs e)
+        private void crearEstadoButton_Click(object sender, EventArgs e)//Este botón sirve para crear el proceso e ingresarlo a la listbox de "Procesos"
         {
             string nombreEstado = nombreEstadoTextBox.Text;
             string operacion = operacionComboBox.SelectedItem.ToString();
@@ -35,7 +35,7 @@ namespace Administrador_Tareas
             nombreEstadoTextBox.Clear();
         }
 
-        private void iniciarButton_Click(object sender, EventArgs e)
+        private void iniciarButton_Click(object sender, EventArgs e)//Este botón inicia el procedimiento donde el proceso creado pasara por cada estado
         {
             if (ejecucionEnCurso || estados.Count == 0)
                 return;
@@ -46,23 +46,26 @@ namespace Administrador_Tareas
 
             Thread procesoThread = new Thread(EjecutarProceso);
             procesoThread.Start();
+
+
         }
 
         private void EjecutarProceso()
         {
-            while (currentIndex < estados.Count)
+            while (currentIndex < estados.Count)//En este se utilizan hilos para mostrar los estados del proceso den la listbox de "Procesos"
             {
                 ProcesoEstado estado = estados[currentIndex];
 
                 estado.EstadoActual = EstadoProceso.Iniciado;
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
+
+                estado.EstadoActual = EstadoProceso.Ejecutado;
+                Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
+                Thread.Sleep(1000);
 
                 if (estado.EsOperacion)
                 {
-                    estado.EstadoActual = EstadoProceso.Ejecutado;
-                    Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                    Thread.Sleep(2000);
 
                     this.Invoke((MethodInvoker)delegate
                     {
@@ -70,13 +73,13 @@ namespace Administrador_Tareas
                         estado.Resultado = resultado;
                         estado.EstadoActual = EstadoProceso.Bloqueado;
                         Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                        Thread.Sleep(2000);
+                        Thread.Sleep(1000);
                     });
                 }
 
                 estado.EstadoActual = EstadoProceso.Listo;
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
 
                 estado.EstadoActual = EstadoProceso.Finalizado;
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
@@ -93,7 +96,7 @@ namespace Administrador_Tareas
             this.Invoke((MethodInvoker)delegate { iniciarButton.Enabled = true; });
         }
 
-        private double RealizarOperacion(ProcesoEstado estado)
+        private double RealizarOperacion(ProcesoEstado estado)//Este realiza la operación de los número ingresados
         {
             double resultado = 0;
             string operacion = estado.Operacion;
@@ -161,7 +164,7 @@ namespace Administrador_Tareas
             return double.NaN; // Valor predeterminado en caso de error.
         }
 
-        private double PedirNumeros(string mensaje1, string mensaje2, Func<double, double, double> operacion)
+        private double PedirNumeros(string mensaje1, string mensaje2, Func<double, double, double> operacion)//Error por si no se dan números validos al momento de ingresarlos
         {
             double resultado = 0;
 
@@ -180,9 +183,9 @@ namespace Administrador_Tareas
             return resultado;
         }
 
-        private void AgregarAlHistorial(ProcesoEstado estado)
+        private void AgregarAlHistorial(ProcesoEstado estado)//Agregar los procesos a la bitácora y mopstrar el resultado
         {
-            string mensaje = $"{estado.ID}: {estado.Nombre}";
+            string mensaje = $"{estado.ID}: {estado.Nombre}: {estado.EstadoActual}";
 
             if (estado.EsOperacion)
             {
@@ -211,6 +214,21 @@ namespace Administrador_Tareas
         private void operacionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void historialListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void estadosListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

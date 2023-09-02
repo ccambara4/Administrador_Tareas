@@ -55,25 +55,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs">
+    <Compile Include="Proyecto\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador.Designer.cs">
+    <Compile Include="Proyecto\Administrador.Designer.cs">
       <DependentUpon>Administrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcesoEstado.cs" />
-    <Compile Include="Procesos.cs">
+    <Compile Include="Proyecto\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Procesos.Designer.cs">
+    <Compile Include="Proyecto\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesoEstado.cs" />
+    <Compile Include="Proyecto\Procesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto\Procesos.Designer.cs">
       <DependentUpon>Procesos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Administrador.resx">
+    <EmbeddedResource Include="Proyecto\Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Procesos.resx">
+    <EmbeddedResource Include="Proyecto\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto\Procesos.resx">
       <DependentUpon>Procesos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

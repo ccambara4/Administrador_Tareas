@@ -20,7 +20,8 @@ namespace Administrador_Tareas
     public class ProcesoEstado
     {
         public int ID { get; }
-        public string Nombre { get; }
+        public int Estado { get; set; }
+        public string Nombre { get; set; }
         public string Operacion { get; }
         public EstadoProceso EstadoActual { get; set; }
         public double Resultado { get; set; }

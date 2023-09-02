@@ -33,5 +33,10 @@ namespace Administrador_Tareas
             Procesos ventana = new Procesos();
             ventana.Visible = true;
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

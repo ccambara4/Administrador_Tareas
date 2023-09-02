@@ -16,7 +16,7 @@ namespace Administrador_Tareas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Administrador());
+            Application.Run(new Menu());
         }
     }
 }

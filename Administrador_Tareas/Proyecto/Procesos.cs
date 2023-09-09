@@ -7,7 +7,7 @@ namespace Administrador_Tareas
 {
     public partial class Procesos : MetroFramework.Forms.MetroForm//Plantilla
     {
-        //Declaración de variables miembro de la clase.
+        //Declaración de variables de la clase.
         private List<ProcesoEstado> estados = new List<ProcesoEstado>();
         private bool ejecucionEnCurso = false;
         private DateTime inicioEjecucion;
@@ -40,6 +40,10 @@ namespace Administrador_Tareas
 
             //Limpia el cuadro de texto del nombre del estado.
             nombreEstadoTextBox.Clear();
+
+            estado.EstadoActual = EstadoProceso.Creado;//Cambia al estado Creado
+            Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
+            Thread.Sleep(2000);
         }
 
         private void iniciarButton_Click(object sender, EventArgs e)//Este botón inicia el procedimiento donde el proceso creado pasara por cada estado
@@ -66,14 +70,14 @@ namespace Administrador_Tareas
             {
                 ProcesoEstado estado = estados[currentIndex];
 
-                // Cambia el estado del proceso y actualiza la interfaz de usuario.
-                estado.EstadoActual = EstadoProceso.Iniciado;
+                //Cambia el estado del proceso y actualiza la interfaz de usuario.
+                estado.EstadoActual = EstadoProceso.Iniciado;//Cambia al estado Iniciado
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
 
-                estado.EstadoActual = EstadoProceso.Ejecutado;
+                estado.EstadoActual = EstadoProceso.Ejecutado;//Cambia al estado Ejecutado
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
 
                 if (estado.EsOperacion)
                 {
@@ -82,17 +86,17 @@ namespace Administrador_Tareas
                     {
                         double resultado = RealizarOperacion(estado);
                         estado.Resultado = resultado;
-                        estado.EstadoActual = EstadoProceso.Bloqueado;
+                        estado.EstadoActual = EstadoProceso.Bloqueado;//Cambia al estado Bloqueado
                         Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                     });
                 }
 
-                estado.EstadoActual = EstadoProceso.Listo;
+                estado.EstadoActual = EstadoProceso.Listo;//Cambia al estado Listo
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
 
-                estado.EstadoActual = EstadoProceso.Finalizado;
+                estado.EstadoActual = EstadoProceso.Finalizado;//Cambia al estado Finalizado
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
 
                 //Agrega el estado al historial.
@@ -114,6 +118,7 @@ namespace Administrador_Tareas
             double resultado = 0;
             string operacion = estado.Operacion;
 
+            //Se crea una condicional para que el programa pueda verificar que operaciones eligió el usuario para pasarlo por los estados
             if (operacion == "Suma")
             {
                 resultado = PedirNumeros("Ingrese el primer número:", "Ingrese el segundo número:", (num1, num2) => num1 + num2);
@@ -134,7 +139,7 @@ namespace Administrador_Tareas
             return resultado;
         }
 
-        //Método para mostrar un cuadro de diálogo de entrada y obtener un número
+        //Método para mostrar un cuadro de diálogo de entrada y poder ingresar un número
         private double MostrarCuadroDialogoEntrada(string mensaje)
         {
             Form cuadroDialogo = new Form();
@@ -163,7 +168,7 @@ namespace Administrador_Tareas
             cuadroDialogo.Controls.Add(cancelarButton);
 
             double resultado = 0;
-            if (cuadroDialogo.ShowDialog() == DialogResult.OK)
+            if (cuadroDialogo.ShowDialog() == DialogResult.OK)//Esta condicional sirve para delvolver el resultado de la operacion si son válidos los números ingresados
             {
                 if (double.TryParse(textBox.Text, out resultado))
                 {
@@ -171,14 +176,14 @@ namespace Administrador_Tareas
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, ingrese un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor, ingrese un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);//Si en dado caso los números no son válidos dará este error al usuario
                 }
             }
 
             return double.NaN; //Valor predeterminado en caso de error.
         }
 
-        private double PedirNumeros(string mensaje1, string mensaje2, Func<double, double, double> operacion)//Error por si no se dan caracteres no validos al momento de ingresarlos en las operaciones
+        private double PedirNumeros(string mensaje1, string mensaje2, Func<double, double, double> operacion)//Muestra el mensaje de error en los cuadros de diálogo
         {
             double resultado = 0;
 
@@ -212,8 +217,6 @@ namespace Administrador_Tareas
                 historialListBox.Items.Add(mensaje);
             });
 
-
-
         }
 
         private void MostrarTiempoTranscurrido(TimeSpan tiempo)//Mostrar el tiempo transcurrido
@@ -240,7 +243,7 @@ namespace Administrador_Tareas
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//Este sirve para cerrar
         {
             Close();
         }

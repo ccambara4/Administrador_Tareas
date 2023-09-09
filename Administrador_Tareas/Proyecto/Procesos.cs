@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Administrador_Tareas
 {
-    public partial class Procesos : MetroFramework.Forms.MetroForm
+    public partial class Procesos : MetroFramework.Forms.MetroForm//Plantilla
     {
         //Declaración de variables miembro de la clase.
         private List<ProcesoEstado> estados = new List<ProcesoEstado>();
@@ -18,6 +18,7 @@ namespace Administrador_Tareas
         {
             InitializeComponent();
         }
+
         //Evento Load del formulario.
         private void Procesos_Load(object sender, EventArgs e)
         {

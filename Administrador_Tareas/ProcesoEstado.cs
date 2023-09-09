@@ -22,12 +22,12 @@ namespace Administrador_Tareas
         public EstadoProceso EstadoActual { get; set; }//El estado actual del proceso
         public double Resultado { get; set; }//El resultado de la operación (si es aplicable)
 
-        public bool EsOperacion => Operacion != "Texto";
+        public bool EsOperacion => Operacion != "Texto";//Identifica si la operación es solo texto
 
         //Constructor de la clase ProcesoEstado
         public ProcesoEstado(string nombre, string operacion)
         {
-            ID = new Random().Next(1, 1000);
+            ID = new Random().Next(1, 1000);//Pone un ID al azar entre 1 y 1000
             Nombre = nombre;
             Operacion = operacion;
             Resultado = 0;//Inicialmente, el resultado es 0

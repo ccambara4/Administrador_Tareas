@@ -97,7 +97,7 @@ namespace Administrador_Tareas
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(933, 450);
+            this.ClientSize = new System.Drawing.Size(820, 450);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.Estados1);
@@ -107,7 +107,7 @@ namespace Administrador_Tareas
             this.Padding = new System.Windows.Forms.Padding(23, 60, 23, 20);
             this.RightToLeftLayout = true;
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "Menu";
+            this.Text = "Menú";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.GhostWhite;
             this.Load += new System.EventHandler(this.Menu_Load);

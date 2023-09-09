@@ -7,17 +7,18 @@ namespace Administrador_Tareas
 {
     public partial class Procesos : MetroFramework.Forms.MetroForm
     {
+        //Declaración de variables miembro de la clase.
         private List<ProcesoEstado> estados = new List<ProcesoEstado>();
         private bool ejecucionEnCurso = false;
         private DateTime inicioEjecucion;
         private int currentIndex = 0;
 
-
+        //Constructor de la clase Procesos.
         public Procesos()
         {
             InitializeComponent();
         }
-
+        //Evento Load del formulario.
         private void Procesos_Load(object sender, EventArgs e)
         {
 
@@ -25,25 +26,33 @@ namespace Administrador_Tareas
 
         private void crearEstadoButton_Click(object sender, EventArgs e)//Este botón sirve para crear el proceso e ingresarlo a la listbox de "Procesos"
         {
+            //Obtiene el nombre y la operación del proceso a crear a partir de la interfaz de usuario.
             string nombreEstado = nombreEstadoTextBox.Text;
             string operacion = operacionComboBox.SelectedItem.ToString();
 
+            //Crea un objeto ProcesoEstado y lo agrega a la lista de estados.
             ProcesoEstado estado = new ProcesoEstado(nombreEstado, operacion);
             estados.Add(estado);
+
+            //Agrega el estado a la ListBox para mostrarlo al usuario.
             estadosListBox.Items.Add(estado);
 
+            //Limpia el cuadro de texto del nombre del estado.
             nombreEstadoTextBox.Clear();
         }
 
         private void iniciarButton_Click(object sender, EventArgs e)//Este botón inicia el procedimiento donde el proceso creado pasara por cada estado
         {
+            //Verifica si ya hay una ejecución en curso o si no hay estados en la lista.
             if (ejecucionEnCurso || estados.Count == 0)
                 return;
 
+            //Inicia la ejecución de procesos en un hilo separado.
             ejecucionEnCurso = true;
             inicioEjecucion = DateTime.Now;
             iniciarButton.Enabled = false;
 
+            //Crea un nuevo hilo para ejecutar los procesos.
             Thread procesoThread = new Thread(EjecutarProceso);
             procesoThread.Start();
 
@@ -56,6 +65,7 @@ namespace Administrador_Tareas
             {
                 ProcesoEstado estado = estados[currentIndex];
 
+                // Cambia el estado del proceso y actualiza la interfaz de usuario.
                 estado.EstadoActual = EstadoProceso.Iniciado;
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
                 Thread.Sleep(1000);
@@ -66,7 +76,7 @@ namespace Administrador_Tareas
 
                 if (estado.EsOperacion)
                 {
-
+                    //Si el estado representa una operación, realiza la operación y actualiza el resultado.
                     this.Invoke((MethodInvoker)delegate
                     {
                         double resultado = RealizarOperacion(estado);
@@ -84,11 +94,13 @@ namespace Administrador_Tareas
                 estado.EstadoActual = EstadoProceso.Finalizado;
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
 
+                //Agrega el estado al historial.
                 AgregarAlHistorial(estado);
 
                 currentIndex++;
             }
 
+            //Finaliza la ejecución y muestra el tiempo transcurrido.
             ejecucionEnCurso = false;
             TimeSpan tiempoTranscurrido = DateTime.Now - inicioEjecucion;
             MostrarTiempoTranscurrido(tiempoTranscurrido);
@@ -96,7 +108,7 @@ namespace Administrador_Tareas
             this.Invoke((MethodInvoker)delegate { iniciarButton.Enabled = true; });
         }
 
-        private double RealizarOperacion(ProcesoEstado estado)//Este realiza la operación de los número ingresados
+        private double RealizarOperacion(ProcesoEstado estado)//Este realiza la operación de los números ingresados
         {
             double resultado = 0;
             string operacion = estado.Operacion;
@@ -121,6 +133,7 @@ namespace Administrador_Tareas
             return resultado;
         }
 
+        //Método para mostrar un cuadro de diálogo de entrada y obtener un número
         private double MostrarCuadroDialogoEntrada(string mensaje)
         {
             Form cuadroDialogo = new Form();
@@ -161,10 +174,10 @@ namespace Administrador_Tareas
                 }
             }
 
-            return double.NaN; // Valor predeterminado en caso de error.
+            return double.NaN; //Valor predeterminado en caso de error.
         }
 
-        private double PedirNumeros(string mensaje1, string mensaje2, Func<double, double, double> operacion)//Error por si no se dan números validos al momento de ingresarlos
+        private double PedirNumeros(string mensaje1, string mensaje2, Func<double, double, double> operacion)//Error por si no se dan caracteres no validos al momento de ingresarlos en las operaciones
         {
             double resultado = 0;
 
@@ -183,7 +196,7 @@ namespace Administrador_Tareas
             return resultado;
         }
 
-        private void AgregarAlHistorial(ProcesoEstado estado)//Agregar los procesos a la bitácora y mopstrar el resultado
+        private void AgregarAlHistorial(ProcesoEstado estado)//Agregar los procesos a la bitácora y mostrar el resultado
         {
             string mensaje = $"{estado.ID}: {estado.Nombre}: {estado.EstadoActual}";
 
@@ -202,7 +215,7 @@ namespace Administrador_Tareas
 
         }
 
-        private void MostrarTiempoTranscurrido(TimeSpan tiempo)
+        private void MostrarTiempoTranscurrido(TimeSpan tiempo)//Mostrar el tiempo transcurrido
         {
             tiempoTranscurridoTextBox.Invoke((MethodInvoker)delegate
             {

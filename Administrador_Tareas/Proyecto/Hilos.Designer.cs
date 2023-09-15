@@ -67,6 +67,7 @@ namespace Administrador_Tareas
             this.txtNumHilos.UseSelectable = true;
             this.txtNumHilos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNumHilos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNumHilos.Click += new System.EventHandler(this.txtNumHilos_Click);
             // 
             // lblNumHilos
             // 
@@ -76,6 +77,7 @@ namespace Administrador_Tareas
             this.lblNumHilos.Size = new System.Drawing.Size(112, 19);
             this.lblNumHilos.TabIndex = 1;
             this.lblNumHilos.Text = "Número de Hilos:";
+            this.lblNumHilos.Click += new System.EventHandler(this.lblNumHilos_Click);
             // 
             // listBox1
             // 
@@ -84,6 +86,7 @@ namespace Administrador_Tareas
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(154, 199);
             this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
@@ -92,6 +95,7 @@ namespace Administrador_Tareas
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(154, 199);
             this.listBox2.TabIndex = 3;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // listBox3
             // 
@@ -100,6 +104,7 @@ namespace Administrador_Tareas
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(154, 199);
             this.listBox3.TabIndex = 4;
+            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // listBox4
             // 
@@ -108,6 +113,7 @@ namespace Administrador_Tareas
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(154, 199);
             this.listBox4.TabIndex = 5;
+            this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
             // btnIniciar
             // 

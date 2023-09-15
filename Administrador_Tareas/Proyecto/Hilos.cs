@@ -18,54 +18,6 @@ namespace Administrador_Tareas
             Thread contadorThread = new Thread(MostrarModal);
             contadorThread.Start();
 
-            //Configurar la apariencia y el diseño del formulario principal
-            this.Text = "Ejecución de Hilos";
-            this.Size = new Size(400, 300);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            //Configurar el TextBox y el Label
-            Label lblNumHilos = new Label();
-            lblNumHilos.Text = "Número de Hilos:";
-            lblNumHilos.Location = new Point(20, 20);
-            TextBox txtNumHilos = new TextBox();
-            txtNumHilos.Name = "txtNumHilos";
-            txtNumHilos.Location = new Point(140, 20);
-
-            //Configurar el botón "Iniciar"
-            Button btnIniciar = new Button();
-            btnIniciar.Text = "Iniciar";
-            btnIniciar.Name = "btnIniciar";
-            btnIniciar.Location = new Point(20, 60);
-            btnIniciar.Click += btnIniciar_Click;
-
-            //Agregar los controles al formulario principal
-            this.Controls.Add(lblNumHilos);
-            this.Controls.Add(txtNumHilos);
-            this.Controls.Add(btnIniciar);
-
-            //Configurar los ListBox
-            ListBox listBox1 = new ListBox();
-            ListBox listBox2 = new ListBox();
-            ListBox listBox3 = new ListBox();
-            ListBox listBox4 = new ListBox();
-
-            //Configurar la ubicación y el tamaño de los ListBox
-            listBox1.Location = new Point(20, 100);
-            listBox2.Location = new Point(140, 100);
-            listBox3.Location = new Point(260, 100);
-            listBox4.Location = new Point(380, 100);
-
-            listBox1.Size = new Size(100, 150);
-            listBox2.Size = new Size(100, 150);
-            listBox3.Size = new Size(100, 150);
-            listBox4.Size = new Size(100, 150);
-
-            //Agregar los ListBox al formulario principal
-            this.Controls.Add(listBox1);
-            this.Controls.Add(listBox2);
-            this.Controls.Add(listBox3);
-            this.Controls.Add(listBox4);
-
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
@@ -74,7 +26,7 @@ namespace Administrador_Tareas
             int numHilos;
             if (int.TryParse(txtNumHilos.Text, out numHilos))
             {
-                // Limpiar ListBox
+                //Limpiar ListBox
                 listBox1.Items.Clear();
                 listBox2.Items.Clear();
                 listBox3.Items.Clear();
@@ -95,14 +47,41 @@ namespace Administrador_Tareas
 
         private void ProcesoLargo()
         {
+            //Generar un ID de hilo al azar
+            Random random = new Random();
+            int threadId = random.Next(1, 1000);
+
+            //Agregar el ID del hilo actual a uno de los ListBox al azar
+            int listBoxIndex = random.Next(1, 5);
+            ListBox selectedListBox = GetRandomListBox(listBoxIndex);
+
             //Simular un proceso largo
-            Thread.Sleep(10000);
+            int numIteraciones = 0;
+            this.Invoke((MethodInvoker)(() => numIteraciones = int.Parse(txtNumHilos.Text)));
+            for (int i = 1; i <= numIteraciones; i++)
+            {
+                Thread.Sleep(1000); //Esperar un segundo
+                //Actualizar el ListBox con el ID del hilo y el contador binario
+                selectedListBox.Invoke((MethodInvoker)(() => selectedListBox.Items.Add($"Hilo {threadId}: {i:D2}")));
+            }
+        }
 
-            //Mostrar mensaje cuando se complete el proceso
-            MessageBox.Show("Proceso largo completado.");
-
-            //Actualizar ListBox con un mensaje
-            listBox1.Invoke((MethodInvoker)(() => listBox1.Items.Add("Hilo completado")));
+        private ListBox GetRandomListBox(int index)
+        {
+            //Devuelve el ListBox correspondiente al índice
+            switch (index)
+            {
+                case 1:
+                    return listBox1;
+                case 2:
+                    return listBox2;
+                case 3:
+                    return listBox3;
+                case 4:
+                    return listBox4;
+                default:
+                    return listBox1;
+            }
         }
 
         private void MostrarModal()
@@ -110,8 +89,8 @@ namespace Administrador_Tareas
             using (Form modalForm = new Form())
             {
                 modalForm.Text = "Contador Binario";
-                modalForm.Size = new Size(200, 100);
-                modalForm.StartPosition = FormStartPosition.CenterParent;
+                modalForm.Size = new System.Drawing.Size(200, 100);
+                modalForm.StartPosition = FormStartPosition.CenterScreen;
                 modalForm.FormBorderStyle = FormBorderStyle.FixedDialog;
                 modalForm.MaximizeBox = false;
                 modalForm.MinimizeBox = false;
@@ -123,18 +102,47 @@ namespace Administrador_Tareas
 
                 modalForm.Controls.Add(contadorLabel);
 
-                //Simular el contador binario (puedes implementar la lógica real aquí)
                 int contador = 1;
                 while (contador <= 31)
                 {
                     string contadorBinario = Convert.ToString(contador, 2).PadLeft(5, '0');
                     contadorLabel.Text = contadorBinario;
-                    Thread.Sleep(1000); //Actualizar cada segundo
+                    Thread.Sleep(1000);
                     contador++;
                 }
 
                 modalForm.ShowDialog();
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumHilos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNumHilos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

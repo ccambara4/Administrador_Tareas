@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Proyecto\Hilos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto\Hilos.Designer.cs">
+      <DependentUpon>Hilos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Proyecto\Hilos.resx">
+      <DependentUpon>Hilos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proyecto\Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
     </EmbeddedResource>

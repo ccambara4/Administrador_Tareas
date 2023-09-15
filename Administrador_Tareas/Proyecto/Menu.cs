@@ -38,5 +38,11 @@ namespace Administrador_Tareas
         {
             Close();
         }
+
+        private void btnHilos_Click(object sender, EventArgs e)
+        {
+            Hilos ventana = new Hilos();
+            ventana.Visible = true;
+        }
     }
 }

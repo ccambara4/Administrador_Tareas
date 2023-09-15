@@ -34,6 +34,7 @@ namespace Administrador_Tareas
             this.Estados1 = new MetroFramework.Controls.MetroButton();
             this.btnCerrar = new MetroFramework.Controls.MetroTile();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.btnHilos = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // Admin
@@ -89,6 +90,16 @@ namespace Administrador_Tareas
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "Escoja un opción:";
             // 
+            // btnHilos
+            // 
+            this.btnHilos.Location = new System.Drawing.Point(287, 143);
+            this.btnHilos.Name = "btnHilos";
+            this.btnHilos.Size = new System.Drawing.Size(141, 44);
+            this.btnHilos.TabIndex = 5;
+            this.btnHilos.Text = "Hilos";
+            this.btnHilos.UseSelectable = true;
+            this.btnHilos.Click += new System.EventHandler(this.btnHilos_Click);
+            // 
             // Menu
             // 
             this.ApplyImageInvert = true;
@@ -98,6 +109,7 @@ namespace Administrador_Tareas
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(820, 450);
+            this.Controls.Add(this.btnHilos);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.Estados1);
@@ -122,5 +134,6 @@ namespace Administrador_Tareas
         private MetroFramework.Controls.MetroButton Estados1;
         private MetroFramework.Controls.MetroTile btnCerrar;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton btnHilos;
     }
 }

@@ -41,9 +41,6 @@ namespace Administrador_Tareas
             //Limpia el cuadro de texto del nombre del estado.
             nombreEstadoTextBox.Clear();
 
-            estado.EstadoActual = EstadoProceso.Creado;//Cambia al estado Creado
-            Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
-            Thread.Sleep(2000);
         }
 
         private void iniciarButton_Click(object sender, EventArgs e)//Este botón inicia el procedimiento donde el proceso creado pasara por cada estado
@@ -66,11 +63,15 @@ namespace Administrador_Tareas
 
         private void EjecutarProceso()
         {
-            while (currentIndex < estados.Count)//En este se utilizan hilos para mostrar los estados del proceso den la listbox de "Procesos"
+            while (currentIndex < estados.Count)//En este se utilizan hilos para mostrar los estados del proceso de la listbox de "Procesos"
             {
                 ProcesoEstado estado = estados[currentIndex];
 
                 //Cambia el estado del proceso y actualiza la interfaz de usuario.
+                estado.EstadoActual = EstadoProceso.Creado;//Cambia al estado Creado
+                Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
+                Thread.Sleep(2000);
+
                 estado.EstadoActual = EstadoProceso.Iniciado;//Cambia al estado Iniciado
                 Invoke((MethodInvoker)delegate { estadosListBox.Refresh(); });
                 Thread.Sleep(2000);

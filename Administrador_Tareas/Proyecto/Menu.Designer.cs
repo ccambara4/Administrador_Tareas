@@ -40,9 +40,9 @@ namespace Administrador_Tareas
             // Admin
             // 
             this.Admin.BackColor = System.Drawing.Color.Yellow;
-            this.Admin.Location = new System.Drawing.Point(62, 143);
+            this.Admin.Location = new System.Drawing.Point(108, 167);
             this.Admin.Name = "Admin";
-            this.Admin.Size = new System.Drawing.Size(154, 44);
+            this.Admin.Size = new System.Drawing.Size(176, 51);
             this.Admin.Style = MetroFramework.MetroColorStyle.Blue;
             this.Admin.TabIndex = 0;
             this.Admin.Text = "Administrador";
@@ -53,24 +53,24 @@ namespace Administrador_Tareas
             // 
             // Estados1
             // 
-            this.Estados1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Estados1.Location = new System.Drawing.Point(62, 211);
+            this.Estados1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Estados1.Location = new System.Drawing.Point(108, 245);
             this.Estados1.Name = "Estados1";
-            this.Estados1.Size = new System.Drawing.Size(154, 44);
+            this.Estados1.Size = new System.Drawing.Size(176, 51);
             this.Estados1.Style = MetroFramework.MetroColorStyle.Green;
             this.Estados1.TabIndex = 1;
             this.Estados1.Text = "Estado de Procesos";
+            this.Estados1.UseCustomBackColor = true;
             this.Estados1.UseSelectable = true;
-            this.Estados1.UseStyleColors = true;
             this.Estados1.Click += new System.EventHandler(this.Estados1_Click);
             // 
             // btnCerrar
             // 
             this.btnCerrar.ActiveControl = null;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCerrar.Location = new System.Drawing.Point(62, 344);
+            this.btnCerrar.Location = new System.Drawing.Point(623, 438);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(107, 42);
+            this.btnCerrar.Size = new System.Drawing.Size(122, 37);
             this.btnCerrar.Style = MetroFramework.MetroColorStyle.Red;
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
@@ -84,7 +84,7 @@ namespace Administrador_Tareas
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.metroLabel1.Location = new System.Drawing.Point(47, 93);
+            this.metroLabel1.Location = new System.Drawing.Point(22, 106);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(150, 25);
             this.metroLabel1.TabIndex = 4;
@@ -92,32 +92,35 @@ namespace Administrador_Tareas
             // 
             // btnHilos
             // 
-            this.btnHilos.Location = new System.Drawing.Point(287, 143);
+            this.btnHilos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnHilos.Location = new System.Drawing.Point(108, 324);
             this.btnHilos.Name = "btnHilos";
-            this.btnHilos.Size = new System.Drawing.Size(141, 44);
+            this.btnHilos.Size = new System.Drawing.Size(176, 51);
+            this.btnHilos.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnHilos.TabIndex = 5;
             this.btnHilos.Text = "Hilos";
+            this.btnHilos.UseCustomBackColor = true;
             this.btnHilos.UseSelectable = true;
             this.btnHilos.Click += new System.EventHandler(this.btnHilos_Click);
             // 
             // Menu
             // 
             this.ApplyImageInvert = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
-            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(820, 450);
+            this.BackMaxSize = 5;
+            this.ClientSize = new System.Drawing.Size(858, 537);
             this.Controls.Add(this.btnHilos);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.Estados1);
             this.Controls.Add(this.Admin);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Menu";
-            this.Padding = new System.Windows.Forms.Padding(23, 60, 23, 20);
-            this.RightToLeftLayout = true;
+            this.Padding = new System.Windows.Forms.Padding(26, 69, 26, 23);
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Menú";
             this.TopMost = true;

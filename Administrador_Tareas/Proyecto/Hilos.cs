@@ -31,8 +31,11 @@ namespace Administrador_Tareas.Proyecto
                 listBox3.Items.Clear();
                 listBox4.Items.Clear();
                 lblContadorBinario.Text = "00001";
+                lblContadorBinario2.Text = "00001";
+                lblContadorBinario3.Text = "00001";
+                lblContadorBinario4.Text = "00001";
 
-                //Crear y ejecutar hilos en paralelo
+                //Crear y ejecutar tareas en paralelo
                 Task.WhenAll(GenerarTareas(numHilos));
             }
             else
@@ -41,7 +44,7 @@ namespace Administrador_Tareas.Proyecto
             }
         }
 
-        private Task[] GenerarTareas(int numHilos)//Hilos que se ejecutan en paralelo
+        private Task[] GenerarTareas(int numHilos)
         {
             var tasks = new Task[numHilos];
 
@@ -56,25 +59,24 @@ namespace Administrador_Tareas.Proyecto
 
         private async Task ProcesoLargo(int id)
         {
-
             //Obtener la cantidad de iteraciones desde el ComboBox
             int numIteraciones = 0;
             this.Invoke((MethodInvoker)(() => numIteraciones = int.Parse(cmbNumHilos.Text)));
 
-            //Realizar el proceso que dura 10 segundos
+            // Realizar el proceso que dura 10 segundos
             for (int i = 1; i <= numIteraciones; i++)
             {
                 await Task.Delay(1000); // Esperar un segundo
 
-                //Actualizar los ListBox con el ID del hilo y el contador binario
+                // Actualizar los ListBox con el ID del hilo y el contador binario
                 ActualizarListBox(id, i);
 
-                //Actualizar el contador binario
+                // Actualizar el contador binario
                 ActualizarContadorBinario();
             }
         }
 
-        private void ActualizarListBox(int id, int valor)//Actualizar las listbox
+        private void ActualizarListBox(int id, int valor)
         {
             this.Invoke((MethodInvoker)(() =>
             {
@@ -85,13 +87,34 @@ namespace Administrador_Tareas.Proyecto
             }));
         }
 
-        private void ActualizarContadorBinario()//Actualizar el contador binario
+        private void ActualizarContadorBinario()
         {
             this.Invoke((MethodInvoker)(() =>
             {
                 int contador = Convert.ToInt32(lblContadorBinario.Text, 2);
                 contador++;
                 lblContadorBinario.Text = Convert.ToString(contador, 2).PadLeft(5, '0');
+            }));
+
+            this.Invoke((MethodInvoker)(() =>
+            {
+                int contador = Convert.ToInt32(lblContadorBinario2.Text, 2);
+                contador++;
+                lblContadorBinario2.Text = Convert.ToString(contador, 2).PadLeft(5, '0');
+            }));
+
+            this.Invoke((MethodInvoker)(() =>
+            {
+                int contador = Convert.ToInt32(lblContadorBinario3.Text, 2);
+                contador++;
+                lblContadorBinario3.Text = Convert.ToString(contador, 2).PadLeft(5, '0');
+            }));
+
+            this.Invoke((MethodInvoker)(() =>
+            {
+                int contador = Convert.ToInt32(lblContadorBinario4.Text, 2);
+                contador++;
+                lblContadorBinario4.Text = Convert.ToString(contador, 2).PadLeft(5, '0');
             }));
         }
 

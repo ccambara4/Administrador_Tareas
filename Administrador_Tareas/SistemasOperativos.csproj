@@ -82,12 +82,6 @@
     <Compile Include="Proyecto\Hilos.Designer.cs">
       <DependentUpon>Hilos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proyecto\Hilos1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proyecto\Hilos1.Designer.cs">
-      <DependentUpon>Hilos1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Proyecto\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,9 +102,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto\Hilos.resx">
       <DependentUpon>Hilos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto\Hilos1.resx">
-      <DependentUpon>Hilos1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

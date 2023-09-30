@@ -35,6 +35,7 @@ namespace Administrador_Tareas
             this.btnCerrar = new MetroFramework.Controls.MetroTile();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnHilos = new MetroFramework.Controls.MetroButton();
+            this.btnSwap = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // Admin
@@ -103,6 +104,19 @@ namespace Administrador_Tareas
             this.btnHilos.UseSelectable = true;
             this.btnHilos.Click += new System.EventHandler(this.btnHilos_Click);
             // 
+            // btnSwap
+            // 
+            this.btnSwap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSwap.Location = new System.Drawing.Point(330, 167);
+            this.btnSwap.Name = "btnSwap";
+            this.btnSwap.Size = new System.Drawing.Size(176, 51);
+            this.btnSwap.Style = MetroFramework.MetroColorStyle.Orange;
+            this.btnSwap.TabIndex = 6;
+            this.btnSwap.Text = "Proceso en Ram";
+            this.btnSwap.UseCustomBackColor = true;
+            this.btnSwap.UseSelectable = true;
+            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click_1);
+            // 
             // Menu
             // 
             this.ApplyImageInvert = true;
@@ -112,6 +126,7 @@ namespace Administrador_Tareas
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackMaxSize = 5;
             this.ClientSize = new System.Drawing.Size(858, 537);
+            this.Controls.Add(this.btnSwap);
             this.Controls.Add(this.btnHilos);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnCerrar);
@@ -138,5 +153,6 @@ namespace Administrador_Tareas
         private MetroFramework.Controls.MetroTile btnCerrar;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnHilos;
+        private MetroFramework.Controls.MetroButton btnSwap;
     }
 }

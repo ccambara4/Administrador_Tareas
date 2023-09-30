@@ -45,5 +45,10 @@ namespace Administrador_Tareas
             Hilos ventana = new Hilos();
             ventana.Visible = true;
         }
+        private void btnSwap_Click_1(object sender, EventArgs e)
+        {
+            Swapping ventana = new Swapping();
+            ventana.Visible = true;
+        }
     }
 }

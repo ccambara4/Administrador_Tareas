@@ -34,14 +34,14 @@ namespace Administrador_Tareas.Proyecto
 
             if (!int.TryParse(textBoxNumero.Text, out numero))
             {
-                MessageBox.Show("Por favor, ingrese un número válido.");
+                MessageBox.Show("Por favor, ingrese un número válido.");//Mensaje de Error
                 return;
             }
 
             string elemento = $"{letra} - {numero}";
             listaPrincipal.Add(elemento);
 
-            // Simular el uso de memoria RAM y obtener la dirección del puntero
+            //Simular el uso de memoria RAM y obtener la dirección del puntero
             IntPtr ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(int)));
             memoriaRam[elemento] = ptr;
 
@@ -67,14 +67,14 @@ namespace Administrador_Tareas.Proyecto
             ActualizarListBoxPrincipal();
         }
 
-        private void btnMoverAListaLetraSeleccionada_Click(object sender, EventArgs e)
+        private void btnMoverAListaLetraSeleccionada_Click(object sender, EventArgs e)//Este es para bajar los procesos
         {
             string letra = comboBoxLetra.SelectedItem.ToString();
             int numero;
 
             if (!int.TryParse(textBoxNumero.Text, out numero))
             {
-                MessageBox.Show("Por favor, ingrese un número válido.");
+                MessageBox.Show("Por favor, ingrese un número válido.");//Mensaje de Error
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace Administrador_Tareas.Proyecto
             ActualizarListBoxPrincipal();
         }
 
-        private void btnDevolverAListaPrincipal_Click(object sender, EventArgs e)
+        private void btnDevolverAListaPrincipal_Click(object sender, EventArgs e)//Este sube de nuevo los procesos 
         {
             string letra = comboBoxLetraDevolver.SelectedItem.ToString();
 
@@ -104,7 +104,7 @@ namespace Administrador_Tareas.Proyecto
             ActualizarListBoxPrincipal();
         }
 
-        private void ActualizarListBoxPrincipal()
+        private void ActualizarListBoxPrincipal()//Actualiza la listbox Principal
         {
             listBoxPrincipal.Items.Clear();
             foreach (var elemento in listaPrincipal)
@@ -114,7 +114,7 @@ namespace Administrador_Tareas.Proyecto
             }
         }
 
-        private void ActualizarListBoxLetraSeleccionada()
+        private void ActualizarListBoxLetraSeleccionada()//Actauliza la listbox de donde se baja el poroceso
         {
             listBoxLetraSeleccionada.Items.Clear();
             foreach (var letra in listaLetraSeleccionada)

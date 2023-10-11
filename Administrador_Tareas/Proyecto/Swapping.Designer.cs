@@ -29,6 +29,7 @@ namespace Administrador_Tareas.Proyecto
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Swapping));
             this.comboBoxLetra = new MetroFramework.Controls.MetroComboBox();
             this.textBoxNumero = new MetroFramework.Controls.MetroTextBox();
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
@@ -45,6 +46,11 @@ namespace Administrador_Tareas.Proyecto
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.btnGuardar = new MetroFramework.Controls.MetroButton();
+            this.btnMostrarDatos = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxLetra
@@ -110,7 +116,7 @@ namespace Administrador_Tareas.Proyecto
             this.listBoxPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPrincipal.FormattingEnabled = true;
             this.listBoxPrincipal.ItemHeight = 16;
-            this.listBoxPrincipal.Location = new System.Drawing.Point(184, 83);
+            this.listBoxPrincipal.Location = new System.Drawing.Point(226, 83);
             this.listBoxPrincipal.Name = "listBoxPrincipal";
             this.listBoxPrincipal.Size = new System.Drawing.Size(320, 260);
             this.listBoxPrincipal.TabIndex = 3;
@@ -160,7 +166,7 @@ namespace Administrador_Tareas.Proyecto
             this.listBoxLetraSeleccionada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxLetraSeleccionada.FormattingEnabled = true;
             this.listBoxLetraSeleccionada.ItemHeight = 16;
-            this.listBoxLetraSeleccionada.Location = new System.Drawing.Point(184, 414);
+            this.listBoxLetraSeleccionada.Location = new System.Drawing.Point(226, 414);
             this.listBoxLetraSeleccionada.Name = "listBoxLetraSeleccionada";
             this.listBoxLetraSeleccionada.Size = new System.Drawing.Size(320, 260);
             this.listBoxLetraSeleccionada.TabIndex = 7;
@@ -196,7 +202,7 @@ namespace Administrador_Tareas.Proyecto
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Red;
-            this.btnCerrar.Location = new System.Drawing.Point(623, 566);
+            this.btnCerrar.Location = new System.Drawing.Point(727, 708);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(120, 42);
             this.btnCerrar.TabIndex = 10;
@@ -240,7 +246,7 @@ namespace Administrador_Tareas.Proyecto
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel4.Location = new System.Drawing.Point(266, 61);
+            this.metroLabel4.Location = new System.Drawing.Point(308, 61);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(146, 19);
             this.metroLabel4.TabIndex = 14;
@@ -250,17 +256,53 @@ namespace Administrador_Tareas.Proyecto
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel5.Location = new System.Drawing.Point(266, 392);
+            this.metroLabel5.Location = new System.Drawing.Point(308, 392);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(146, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(126, 19);
             this.metroLabel5.TabIndex = 15;
-            this.metroLabel5.Text = "Procesos Guardados";
+            this.metroLabel5.Text = "Procesos Bajados";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(573, 83);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(343, 267);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGuardar.Location = new System.Drawing.Point(247, 680);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(120, 42);
+            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseCustomBackColor = true;
+            this.btnGuardar.UseSelectable = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
+            // 
+            // btnMostrarDatos
+            // 
+            this.btnMostrarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnMostrarDatos.Location = new System.Drawing.Point(389, 680);
+            this.btnMostrarDatos.Name = "btnMostrarDatos";
+            this.btnMostrarDatos.Size = new System.Drawing.Size(120, 42);
+            this.btnMostrarDatos.TabIndex = 18;
+            this.btnMostrarDatos.Text = "Mostrar";
+            this.btnMostrarDatos.UseCustomBackColor = true;
+            this.btnMostrarDatos.UseSelectable = true;
+            this.btnMostrarDatos.Click += new System.EventHandler(this.btnMostrarDatos_Click_1);
             // 
             // Swapping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 789);
+            this.ClientSize = new System.Drawing.Size(926, 789);
+            this.Controls.Add(this.btnMostrarDatos);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
@@ -281,6 +323,7 @@ namespace Administrador_Tareas.Proyecto
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Swapping";
             this.Load += new System.EventHandler(this.Swapping_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +347,9 @@ namespace Administrador_Tareas.Proyecto
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private MetroFramework.Controls.MetroButton btnGuardar;
+        private MetroFramework.Controls.MetroButton btnMostrarDatos;
     }
 }

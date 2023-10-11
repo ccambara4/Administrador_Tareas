@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace Administrador_Tareas.Proyecto
 {
@@ -10,10 +11,8 @@ namespace Administrador_Tareas.Proyecto
         private List<string> listaPrincipal = new List<string>();
         private List<string> listaLetraSeleccionada = new List<string>();
         private Dictionary<string, IntPtr> memoriaRam = new Dictionary<string, IntPtr>();
-
-        /*No utiliza punteros, pero simula el uso de memoria 
-         * RAM utilizando un diccionario para realizar un 
-         * seguimiento de la memoria asignada y liberada.*/
+        /*Lleva un registro de las asignaciones de memoria 
+         * no administrada hechas en la aplicación*/
 
 
         public Swapping()
@@ -34,21 +33,24 @@ namespace Administrador_Tareas.Proyecto
 
             if (!int.TryParse(textBoxNumero.Text, out numero))
             {
-                MessageBox.Show("Por favor, ingrese un número válido.");//Mensaje de Error
+                MessageBox.Show("Por favor, ingrese un número válido.");
                 return;
             }
 
             string elemento = $"{letra} - {numero}";
             listaPrincipal.Add(elemento);
 
-            //Simular el uso de memoria RAM y obtener la dirección del puntero
-            IntPtr ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(int)));
-            memoriaRam[elemento] = ptr;
+            //Uso de punteros para asignar el número de espacio en la memoria RAM
+            IntPtr ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(int)));/*se utiliza para asignar un bloque de memoria no administrada 
+                                                                            * del tamaño de un entero (int) en la memoria no administrada 
+                                                                            * y obtener un puntero a esa memoria*/
+
+            memoriaRam[elemento] = ptr;//Se utiliza para almacenar un puntero en un diccionario llamado memoriaRam
 
             ActualizarListBoxPrincipal();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)//Eliminar el proceso ingresado
         {
             string letra = comboBoxLetra.SelectedItem.ToString();
 
@@ -64,8 +66,12 @@ namespace Administrador_Tareas.Proyecto
                 }
             }
 
+
             ActualizarListBoxPrincipal();
         }
+
+
+
 
         private void btnMoverAListaLetraSeleccionada_Click(object sender, EventArgs e)//Este es para bajar los procesos
         {
@@ -91,18 +97,24 @@ namespace Administrador_Tareas.Proyecto
         {
             string letra = comboBoxLetraDevolver.SelectedItem.ToString();
 
-            for (int i = listBoxLetraSeleccionada.Items.Count - 1; i >= 0; i--)
+            for (int i = listaLetraSeleccionada.Count - 1; i >= 0; i--)
             {
-                string elemento = listBoxLetraSeleccionada.Items[i].ToString();
+                string elemento = listaLetraSeleccionada[i];
                 if (elemento.StartsWith(letra))
                 {
-                    listBoxLetraSeleccionada.Items.RemoveAt(i);
+                    listaLetraSeleccionada.RemoveAt(i);
                     listaPrincipal.Add(elemento);
-                    listBoxPrincipal.Items.Add(elemento);
+                    ActualizarListBoxPrincipal();
+
+                    //Liberar la memoria asignada al elemento devuelto
+                    IntPtr ptr = memoriaRam[elemento];
+                    Marshal.FreeHGlobal(ptr);
                 }
             }
             ActualizarListBoxPrincipal();
+            ActualizarListBoxLetraSeleccionada();
         }
+
 
         private void ActualizarListBoxPrincipal()//Actualiza la listbox Principal
         {
@@ -114,7 +126,7 @@ namespace Administrador_Tareas.Proyecto
             }
         }
 
-        private void ActualizarListBoxLetraSeleccionada()//Actauliza la listbox de donde se baja el poroceso
+        private void ActualizarListBoxLetraSeleccionada()//Actualiza la listbox de donde se baja el poroceso
         {
             listBoxLetraSeleccionada.Items.Clear();
             foreach (var letra in listaLetraSeleccionada)
@@ -126,6 +138,45 @@ namespace Administrador_Tareas.Proyecto
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)//Guarda los procesos bajados
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivo de Texto|*.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                File.WriteAllLines(filePath, listaLetraSeleccionada);
+            }
+
+            ActualizarListBoxLetraSeleccionada();
+        }
+
+        private void btnMostrarDatos_Click_1(object sender, EventArgs e)//Muestra el archivo txt
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivo de Texto|*.txt";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                string[] lines = File.ReadAllLines(filePath);
+
+                if (lines.Length > 0)
+                {
+                    string contenido = string.Join(Environment.NewLine, lines);
+                    MessageBox.Show("Contenido del archivo:\n\n" + contenido, "Datos del Archivo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("El archivo está vacío.", "Archivo Vacío",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            ActualizarListBoxLetraSeleccionada();
         }
     }
 }

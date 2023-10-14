@@ -26,12 +26,12 @@ namespace Administrador_Tareas.Proyecto
 
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)//Agrega los procesos
         {
             string letra = comboBoxLetra.SelectedItem.ToString();
             int numero;
 
-            if (!int.TryParse(textBoxNumero.Text, out numero))
+            if (!int.TryParse(textBoxNumero.Text, out numero))//Error de dato
             {
                 MessageBox.Show("Por favor, ingrese un número válido.");
                 return;
@@ -41,11 +41,12 @@ namespace Administrador_Tareas.Proyecto
             listaPrincipal.Add(elemento);
 
             //Uso de punteros para asignar el número de espacio en la memoria RAM
-            IntPtr ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(int)));/*se utiliza para asignar un bloque de memoria no administrada 
-                                                                            * del tamaño de un entero (int) en la memoria no administrada 
-                                                                            * y obtener un puntero a esa memoria*/
+            IntPtr ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(int)));
+            /*Se utiliza para asignar un bloque de memoria no administrada 
+             * * del tamaño de un entero en la memoria no administrada 
+             * * y obtener un puntero a esa memoria*/
 
-            memoriaRam[elemento] = ptr;//Se utiliza para almacenar un puntero en un diccionario llamado memoriaRam
+            memoriaRam[elemento] = ptr;//Este almacena un puntero en un diccionario llamado memoriaRam
 
             ActualizarListBoxPrincipal();
         }
@@ -91,6 +92,7 @@ namespace Administrador_Tareas.Proyecto
             listaLetraSeleccionada.Add(elemento);
             ActualizarListBoxLetraSeleccionada();
             ActualizarListBoxPrincipal();
+            ActualizarArchivoProcesos();
         }
 
         private void btnDevolverAListaPrincipal_Click(object sender, EventArgs e)//Este sube de nuevo los procesos 
@@ -113,6 +115,7 @@ namespace Administrador_Tareas.Proyecto
             }
             ActualizarListBoxPrincipal();
             ActualizarListBoxLetraSeleccionada();
+            ActualizarArchivoProcesos();
         }
 
 
@@ -140,43 +143,46 @@ namespace Administrador_Tareas.Proyecto
             Close();
         }
 
+        
 
-        private void btnGuardar_Click_1(object sender, EventArgs e)//Guarda los procesos bajados
+        private void btnVerProcesos_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Archivo de Texto|*.txt";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            string filePath = @"D:\Universidad\procesos.txt";
+
+            if (File.Exists(filePath))
             {
-                string filePath = saveFileDialog.FileName;
-                File.WriteAllLines(filePath, listaLetraSeleccionada);
-            }
-
-            ActualizarListBoxLetraSeleccionada();
-        }
-
-        private void btnMostrarDatos_Click_1(object sender, EventArgs e)//Muestra el archivo txt
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivo de Texto|*.txt";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = openFileDialog.FileName;
-                string[] lines = File.ReadAllLines(filePath);
-
-                if (lines.Length > 0)
+                string contenido = File.ReadAllText(filePath);
+                if (!string.IsNullOrWhiteSpace(contenido))
                 {
-                    string contenido = string.Join(Environment.NewLine, lines);
-                    MessageBox.Show("Contenido del archivo:\n\n" + contenido, "Datos del Archivo",
+                    MessageBox.Show("Contenido del archivo procesos.txt:\n\n" + contenido, "Procesos",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("El archivo está vacío.", "Archivo Vacío",
+                    MessageBox.Show("El archivo procesos.txt está vacío.", "Archivo Vacío",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-
-            ActualizarListBoxLetraSeleccionada();
+            else
+            {
+                MessageBox.Show("El archivo procesos.txt no existe.", "Archivo no Encontrado",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
+        private void ActualizarArchivoProcesos()
+        {
+            string filePath = @"D:\Universidad\procesos.txt";
+
+            if (listBoxLetraSeleccionada.Items.Count > 0)
+            {
+                File.WriteAllLines(filePath, listaLetraSeleccionada);
+            }
+            else
+            {
+                File.WriteAllText(filePath, string.Empty); //Archivo vacío
+            }
+        }
+
     }
 }

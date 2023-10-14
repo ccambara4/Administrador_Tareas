@@ -48,8 +48,7 @@ namespace Administrador_Tareas.Proyecto
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.btnGuardar = new MetroFramework.Controls.MetroButton();
-            this.btnMostrarDatos = new MetroFramework.Controls.MetroButton();
+            this.btnVerProcesos = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -271,37 +270,24 @@ namespace Administrador_Tareas.Proyecto
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // btnGuardar
+            // btnVerProcesos
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnGuardar.Location = new System.Drawing.Point(247, 680);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(120, 42);
-            this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseCustomBackColor = true;
-            this.btnGuardar.UseSelectable = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
-            // 
-            // btnMostrarDatos
-            // 
-            this.btnMostrarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnMostrarDatos.Location = new System.Drawing.Point(389, 680);
-            this.btnMostrarDatos.Name = "btnMostrarDatos";
-            this.btnMostrarDatos.Size = new System.Drawing.Size(120, 42);
-            this.btnMostrarDatos.TabIndex = 18;
-            this.btnMostrarDatos.Text = "Mostrar";
-            this.btnMostrarDatos.UseCustomBackColor = true;
-            this.btnMostrarDatos.UseSelectable = true;
-            this.btnMostrarDatos.Click += new System.EventHandler(this.btnMostrarDatos_Click_1);
+            this.btnVerProcesos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnVerProcesos.Location = new System.Drawing.Point(324, 680);
+            this.btnVerProcesos.Name = "btnVerProcesos";
+            this.btnVerProcesos.Size = new System.Drawing.Size(120, 42);
+            this.btnVerProcesos.TabIndex = 17;
+            this.btnVerProcesos.Text = "Mostrar";
+            this.btnVerProcesos.UseCustomBackColor = true;
+            this.btnVerProcesos.UseSelectable = true;
+            this.btnVerProcesos.Click += new System.EventHandler(this.btnVerProcesos_Click);
             // 
             // Swapping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 789);
-            this.Controls.Add(this.btnMostrarDatos);
-            this.Controls.Add(this.btnGuardar);
+            this.ClientSize = new System.Drawing.Size(926, 812);
+            this.Controls.Add(this.btnVerProcesos);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
@@ -349,7 +335,6 @@ namespace Administrador_Tareas.Proyecto
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private MetroFramework.Controls.MetroButton btnGuardar;
-        private MetroFramework.Controls.MetroButton btnMostrarDatos;
+        private MetroFramework.Controls.MetroButton btnVerProcesos;
     }
 }

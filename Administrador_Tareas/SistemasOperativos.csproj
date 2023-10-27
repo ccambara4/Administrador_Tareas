@@ -59,6 +59,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Diagnostics.Tracing" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,11 +73,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListBoxItem.cs" />
     <Compile Include="Proyecto\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proyecto\Administrador.Designer.cs">
       <DependentUpon>Administrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto\Explorador_Archivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto\Explorador_Archivos.Designer.cs">
+      <DependentUpon>Explorador_Archivos.cs</DependentUpon>
     </Compile>
     <Compile Include="Proyecto\Hilos.cs">
       <SubType>Form</SubType>
@@ -105,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="Proyecto\Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto\Explorador_Archivos.resx">
+      <DependentUpon>Explorador_Archivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto\Hilos.resx">
       <DependentUpon>Hilos.cs</DependentUpon>
@@ -156,6 +169,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\miles-morales-ps5_5120x2880_xtrafondos.com.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HNWT6DgoBc14riaEeLCzGYopkqYBKxpGKqfNWfgr368M9Wbc2mPg5qHxhnPM8zfB8kwegedjUrd4Kft9qVNUSNpjVheDqPjbVPZ2LY9tV2kUAoa7z8LMnG9Bazh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DriveIcon.png" />
+    <None Include="Resources\FileIcon.png" />
+    <Content Include="Resources\FolderIcon.jpg">
+      <CustomToolNamespace>FolderIcon</CustomToolNamespace>
+    </Content>
+    <None Include="Resources\FolderIcon1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

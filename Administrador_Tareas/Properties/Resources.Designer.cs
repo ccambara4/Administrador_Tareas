@@ -63,6 +63,57 @@ namespace Administrador_Tareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DriveIcon {
+            get {
+                object obj = ResourceManager.GetObject("DriveIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FileIcon {
+            get {
+                object obj = ResourceManager.GetObject("FileIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FolderIcon {
+            get {
+                object obj = ResourceManager.GetObject("FolderIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giphy {
+            get {
+                object obj = ResourceManager.GetObject("giphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HNWT6DgoBc14riaEeLCzGYopkqYBKxpGKqfNWfgr368M9Wbc2mPg5qHxhnPM8zfB8kwegedjUrd4Kft9qVNUSNpjVheDqPjbVPZ2LY9tV2kUAoa7z8LMnG9Bazh {
+            get {
+                object obj = ResourceManager.GetObject("HNWT6DgoBc14riaEeLCzGYopkqYBKxpGKqfNWfgr368M9Wbc2mPg5qHxhnPM8zfB8kwegedjUrd4Kft9q" +
+                        "VNUSNpjVheDqPjbVPZ2LY9tV2kUAoa7z8LMnG9Bazh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap miles_morales_ps5_5120x2880_xtrafondos_com {
             get {
                 object obj = ResourceManager.GetObject("miles-morales-ps5_5120x2880_xtrafondos.com", resourceCulture);

@@ -47,7 +47,6 @@ namespace Administrador_Tareas.Proyecto
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnVerProcesos = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +61,7 @@ namespace Administrador_Tareas.Proyecto
             "C",
             "D",
             "E"});
-            this.comboBoxLetra.Location = new System.Drawing.Point(24, 122);
+            this.comboBoxLetra.Location = new System.Drawing.Point(42, 123);
             this.comboBoxLetra.Name = "comboBoxLetra";
             this.comboBoxLetra.Size = new System.Drawing.Size(121, 29);
             this.comboBoxLetra.TabIndex = 0;
@@ -83,7 +82,7 @@ namespace Administrador_Tareas.Proyecto
             this.textBoxNumero.CustomButton.UseSelectable = true;
             this.textBoxNumero.CustomButton.Visible = false;
             this.textBoxNumero.Lines = new string[0];
-            this.textBoxNumero.Location = new System.Drawing.Point(25, 171);
+            this.textBoxNumero.Location = new System.Drawing.Point(41, 167);
             this.textBoxNumero.MaxLength = 32767;
             this.textBoxNumero.Name = "textBoxNumero";
             this.textBoxNumero.PasswordChar = '\0';
@@ -101,7 +100,7 @@ namespace Administrador_Tareas.Proyecto
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnAgregar.Location = new System.Drawing.Point(24, 217);
+            this.btnAgregar.Location = new System.Drawing.Point(42, 218);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(120, 42);
             this.btnAgregar.TabIndex = 2;
@@ -123,7 +122,7 @@ namespace Administrador_Tareas.Proyecto
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.Location = new System.Drawing.Point(24, 280);
+            this.btnEliminar.Location = new System.Drawing.Point(42, 281);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 42);
             this.btnEliminar.TabIndex = 4;
@@ -217,9 +216,9 @@ namespace Administrador_Tareas.Proyecto
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.metroLabel1.Location = new System.Drawing.Point(9, 100);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(184, 19);
             this.metroLabel1.TabIndex = 11;
-            this.metroLabel1.Text = "Ingrese el Proceso:";
+            this.metroLabel1.Text = "Ingrese el Proceso y Dato:";
             // 
             // metroLabel2
             // 
@@ -277,7 +276,7 @@ namespace Administrador_Tareas.Proyecto
             this.btnVerProcesos.Name = "btnVerProcesos";
             this.btnVerProcesos.Size = new System.Drawing.Size(120, 42);
             this.btnVerProcesos.TabIndex = 17;
-            this.btnVerProcesos.Text = "Mostrar";
+            this.btnVerProcesos.Text = "Mostrar Guardado";
             this.btnVerProcesos.UseCustomBackColor = true;
             this.btnVerProcesos.UseSelectable = true;
             this.btnVerProcesos.Click += new System.EventHandler(this.btnVerProcesos_Click);
@@ -334,7 +333,6 @@ namespace Administrador_Tareas.Proyecto
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private MetroFramework.Controls.MetroButton btnVerProcesos;
     }
 }

@@ -72,8 +72,6 @@ namespace Administrador_Tareas.Proyecto
         }
 
 
-
-
         private void btnMoverAListaLetraSeleccionada_Click(object sender, EventArgs e)//Este es para bajar los procesos
         {
             string letra = comboBoxLetra.SelectedItem.ToString();

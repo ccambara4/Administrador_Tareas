@@ -1,13 +1,5 @@
 ﻿using Administrador_Tareas.Proyecto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Administrador_Tareas
 {
@@ -48,6 +40,12 @@ namespace Administrador_Tareas
         private void btnSwap_Click_1(object sender, EventArgs e)
         {
             Swapping ventana = new Swapping();
+            ventana.Visible = true;
+        }
+
+        private void Explorador_Click(object sender, EventArgs e)
+        {
+            Explorador_Archivos ventana = new Explorador_Archivos();
             ventana.Visible = true;
         }
     }

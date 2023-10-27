@@ -36,6 +36,7 @@ namespace Administrador_Tareas
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnHilos = new MetroFramework.Controls.MetroButton();
             this.btnSwap = new MetroFramework.Controls.MetroButton();
+            this.Explorador = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // Admin
@@ -117,6 +118,19 @@ namespace Administrador_Tareas
             this.btnSwap.UseSelectable = true;
             this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click_1);
             // 
+            // Explorador
+            // 
+            this.Explorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Explorador.Location = new System.Drawing.Point(330, 245);
+            this.Explorador.Name = "Explorador";
+            this.Explorador.Size = new System.Drawing.Size(176, 51);
+            this.Explorador.Style = MetroFramework.MetroColorStyle.Orange;
+            this.Explorador.TabIndex = 7;
+            this.Explorador.Text = "Explorador de Archivos";
+            this.Explorador.UseCustomBackColor = true;
+            this.Explorador.UseSelectable = true;
+            this.Explorador.Click += new System.EventHandler(this.Explorador_Click);
+            // 
             // Menu
             // 
             this.ApplyImageInvert = true;
@@ -126,6 +140,7 @@ namespace Administrador_Tareas
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackMaxSize = 5;
             this.ClientSize = new System.Drawing.Size(858, 537);
+            this.Controls.Add(this.Explorador);
             this.Controls.Add(this.btnSwap);
             this.Controls.Add(this.btnHilos);
             this.Controls.Add(this.metroLabel1);
@@ -154,5 +169,6 @@ namespace Administrador_Tareas
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnHilos;
         private MetroFramework.Controls.MetroButton btnSwap;
+        private MetroFramework.Controls.MetroButton Explorador;
     }
 }

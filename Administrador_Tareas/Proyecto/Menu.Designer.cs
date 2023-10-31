@@ -44,7 +44,7 @@ namespace Administrador_Tareas
             this.Admin.BackColor = System.Drawing.Color.Yellow;
             this.Admin.Location = new System.Drawing.Point(108, 167);
             this.Admin.Name = "Admin";
-            this.Admin.Size = new System.Drawing.Size(176, 51);
+            this.Admin.Size = new System.Drawing.Size(213, 62);
             this.Admin.Style = MetroFramework.MetroColorStyle.Blue;
             this.Admin.TabIndex = 0;
             this.Admin.Text = "Administrador";
@@ -58,7 +58,7 @@ namespace Administrador_Tareas
             this.Estados1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Estados1.Location = new System.Drawing.Point(108, 245);
             this.Estados1.Name = "Estados1";
-            this.Estados1.Size = new System.Drawing.Size(176, 51);
+            this.Estados1.Size = new System.Drawing.Size(213, 62);
             this.Estados1.Style = MetroFramework.MetroColorStyle.Green;
             this.Estados1.TabIndex = 1;
             this.Estados1.Text = "Estado de Procesos";
@@ -70,9 +70,9 @@ namespace Administrador_Tareas
             // 
             this.btnCerrar.ActiveControl = null;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCerrar.Location = new System.Drawing.Point(623, 438);
+            this.btnCerrar.Location = new System.Drawing.Point(330, 324);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(122, 37);
+            this.btnCerrar.Size = new System.Drawing.Size(213, 62);
             this.btnCerrar.Style = MetroFramework.MetroColorStyle.Red;
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
@@ -97,7 +97,7 @@ namespace Administrador_Tareas
             this.btnHilos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnHilos.Location = new System.Drawing.Point(108, 324);
             this.btnHilos.Name = "btnHilos";
-            this.btnHilos.Size = new System.Drawing.Size(176, 51);
+            this.btnHilos.Size = new System.Drawing.Size(213, 62);
             this.btnHilos.Style = MetroFramework.MetroColorStyle.Lime;
             this.btnHilos.TabIndex = 5;
             this.btnHilos.Text = "Hilos";
@@ -110,7 +110,7 @@ namespace Administrador_Tareas
             this.btnSwap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnSwap.Location = new System.Drawing.Point(330, 167);
             this.btnSwap.Name = "btnSwap";
-            this.btnSwap.Size = new System.Drawing.Size(176, 51);
+            this.btnSwap.Size = new System.Drawing.Size(213, 62);
             this.btnSwap.Style = MetroFramework.MetroColorStyle.Orange;
             this.btnSwap.TabIndex = 6;
             this.btnSwap.Text = "Proceso en Ram";
@@ -123,7 +123,7 @@ namespace Administrador_Tareas
             this.Explorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Explorador.Location = new System.Drawing.Point(330, 245);
             this.Explorador.Name = "Explorador";
-            this.Explorador.Size = new System.Drawing.Size(176, 51);
+            this.Explorador.Size = new System.Drawing.Size(213, 62);
             this.Explorador.Style = MetroFramework.MetroColorStyle.Orange;
             this.Explorador.TabIndex = 7;
             this.Explorador.Text = "Explorador de Archivos";
@@ -139,7 +139,7 @@ namespace Administrador_Tareas
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackMaxSize = 5;
-            this.ClientSize = new System.Drawing.Size(858, 537);
+            this.ClientSize = new System.Drawing.Size(643, 537);
             this.Controls.Add(this.Explorador);
             this.Controls.Add(this.btnSwap);
             this.Controls.Add(this.btnHilos);

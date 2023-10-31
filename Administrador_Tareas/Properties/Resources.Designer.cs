@@ -63,6 +63,67 @@ namespace Administrador_Tareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _174872 {
+            get {
+                object obj = ResourceManager.GetObject("174872", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _300221 {
+            get {
+                object obj = ResourceManager.GetObject("300221", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3247956 {
+            get {
+                object obj = ResourceManager.GetObject("3247956", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _32479561 {
+            get {
+                object obj = ResourceManager.GetObject("32479561", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3767084 {
+            get {
+                object obj = ResourceManager.GetObject("3767084", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _60922486_icono_del_sobre_enviar_correo_electrónico_la_muestra_del_mensaje_símbolo_de_correo_de_internet {
+            get {
+                object obj = ResourceManager.GetObject("60922486-icono-del-sobre-enviar-correo-electrónico-la-muestra-del-mensaje-símbolo" +
+                        "-de-correo-de-internet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DriveIcon {
             get {
                 object obj = ResourceManager.GetObject("DriveIcon", resourceCulture);
@@ -114,6 +175,16 @@ namespace Administrador_Tareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imagenes_de_paisajes_hermosos_4 {
+            get {
+                object obj = ResourceManager.GetObject("imagenes-de-paisajes-hermosos-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap miles_morales_ps5_5120x2880_xtrafondos_com {
             get {
                 object obj = ResourceManager.GetObject("miles-morales-ps5_5120x2880_xtrafondos.com", resourceCulture);
@@ -127,6 +198,26 @@ namespace Administrador_Tareas.Properties {
         internal static System.Drawing.Bitmap miles_morales_ps5_5120x2880_xtrafondos1 {
             get {
                 object obj = ResourceManager.GetObject("miles-morales-ps5_5120x2880_xtrafondos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap original {
+            get {
+                object obj = ResourceManager.GetObject("original", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recycle_bin {
+            get {
+                object obj = ResourceManager.GetObject("recycle-bin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

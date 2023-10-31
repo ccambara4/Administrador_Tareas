@@ -23,12 +23,12 @@ namespace Administrador_Tareas.Proyecto
         private void InitializeListView()//Agregar iconos
         {
             listViewContent.View = View.Details;
-            listViewContent.Columns.Add("Nombre", 300);
+            listViewContent.Columns.Add("Nombre", 300);//Tamaño del nombre de la columna
             listViewContent.Columns.Add("Tamaño", 100);
             listViewContent.Columns.Add("Tipo", 100);
 
             ImageList imageList = new ImageList();
-            imageList.Images.Add(Properties.Resources.DriveIcon);
+            imageList.Images.Add(Properties.Resources.DriveIcon);//Imágen de Ícono
             imageList.Images.Add(Properties.Resources.FolderIcon);
             imageList.Images.Add(Properties.Resources.FileIcon);
 
@@ -76,7 +76,7 @@ namespace Administrador_Tareas.Proyecto
 
         
 
-        private void listViewContent_SelectedIndexChanged(object sender, EventArgs e)
+        private void listViewContent_SelectedIndexChanged(object sender, EventArgs e)//Cargar los datos a la listview
         {
             if (listViewContent.SelectedItems.Count > 0)
             {
@@ -106,12 +106,12 @@ namespace Administrador_Tareas.Proyecto
             
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)//Botón cerrar
         {
             Close();
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
+        private void btnAtras_Click(object sender, EventArgs e)//Cargar los discos de nuevo
         {
             PopulateDriveList();
             InitializeListView();

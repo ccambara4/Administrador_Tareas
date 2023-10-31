@@ -48,5 +48,7 @@ namespace Administrador_Tareas
             Explorador_Archivos ventana = new Explorador_Archivos();
             ventana.Visible = true;
         }
+
+        
     }
 }

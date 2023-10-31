@@ -99,6 +99,12 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcesoEstado.cs" />
+    <Compile Include="Proyecto\Menu_Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proyecto\Menu_Inicio.Designer.cs">
+      <DependentUpon>Menu_Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto\Procesos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proyecto\Menu_Inicio.resx">
+      <DependentUpon>Menu_Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proyecto\Procesos.resx">
       <DependentUpon>Procesos.cs</DependentUpon>
@@ -177,8 +186,17 @@
     <None Include="Resources\giphy.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\original.jpg" />
+    <None Include="Resources\recycle-bin.png" />
+    <None Include="Resources\imagenes-de-paisajes-hermosos-4.jpg" />
     <None Include="Resources\DriveIcon.png" />
     <None Include="Resources\FileIcon.png" />
+    <None Include="Resources\3247956.png" />
+    <None Include="Resources\3767084.png" />
+    <None Include="Resources\174872.png" />
+    <None Include="Resources\32479561.png" />
+    <None Include="Resources\300221.png" />
+    <None Include="Resources\60922486-icono-del-sobre-enviar-correo-electrónico-la-muestra-del-mensaje-símbolo-de-correo-de-internet.jpg" />
     <Content Include="Resources\FolderIcon.jpg">
       <CustomToolNamespace>FolderIcon</CustomToolNamespace>
     </Content>

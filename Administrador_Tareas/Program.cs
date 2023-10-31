@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Administrador_Tareas.Proyecto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Administrador_Tareas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new Menu_Inicio());
         }
     }
 }

@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -203,6 +203,7 @@
     <None Include="Resources\giphy.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pngtree-wifi-vector-icon-png-image_963352.jpg" />
     <None Include="Resources\original.jpg" />
     <None Include="Resources\recycle-bin.png" />
     <None Include="Resources\imagenes-de-paisajes-hermosos-4.jpg" />
@@ -219,6 +220,9 @@
     <None Include="Resources\200.gif" />
     <None Include="Resources\81dd88_46b49b6cdd824c4c99f882a4ccd1c698~mv2.gif" />
     <Content Include="3d_applications_folder_20538.ico" />
+    <None Include="Resources\588a64fed06f6719692a2d14.png" />
+    <None Include="Resources\5f477fa71490460004d4eca5.png" />
+    <None Include="Resources\0cbf2f5c3fb37d033c0bc791ae196dbb.gif" />
     <Content Include="Resources\FolderIcon.jpg">
       <CustomToolNamespace>FolderIcon</CustomToolNamespace>
     </Content>

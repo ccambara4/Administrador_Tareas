@@ -63,6 +63,16 @@ namespace Administrador_Tareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0cbf2f5c3fb37d033c0bc791ae196dbb {
+            get {
+                object obj = ResourceManager.GetObject("0cbf2f5c3fb37d033c0bc791ae196dbb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _174872 {
             get {
                 object obj = ResourceManager.GetObject("174872", resourceCulture);
@@ -116,6 +126,26 @@ namespace Administrador_Tareas.Properties {
         internal static System.Drawing.Bitmap _3767084 {
             get {
                 object obj = ResourceManager.GetObject("3767084", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _588a64fed06f6719692a2d14 {
+            get {
+                object obj = ResourceManager.GetObject("588a64fed06f6719692a2d14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5f477fa71490460004d4eca5 {
+            get {
+                object obj = ResourceManager.GetObject("5f477fa71490460004d4eca5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -248,6 +278,16 @@ namespace Administrador_Tareas.Properties {
         internal static System.Drawing.Bitmap original {
             get {
                 object obj = ResourceManager.GetObject("original", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_wifi_vector_icon_png_image_963352 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-wifi-vector-icon-png-image_963352", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -32,7 +32,7 @@ namespace Administrador_Tareas.Proyecto
 
         private void Imge_Click(object sender, EventArgs e)
         {
-            Menu ventana = new Menu();
+            Explorador_Archivos ventana = new Explorador_Archivos();
             ventana.Visible = true;
         }
 
@@ -93,12 +93,29 @@ namespace Administrador_Tareas.Proyecto
                     case 4:
                         System.Diagnostics.Process.Start("winword.exe");
                         break;
+
+                    case 5:
+                        Explorador_Archivos exploraForm = new Explorador_Archivos();
+                        exploraForm.Show();
+                        break;
+                       
                 }
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona un formulario antes de abrir.");
             }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Menu ventana = new Menu();
+            ventana.Visible = true;
+        }
+
+        private void comboBoxFormularios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

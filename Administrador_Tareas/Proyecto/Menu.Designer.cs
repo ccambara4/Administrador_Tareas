@@ -37,6 +37,8 @@ namespace Administrador_Tareas
             this.btnHilos = new MetroFramework.Controls.MetroButton();
             this.btnSwap = new MetroFramework.Controls.MetroButton();
             this.Explorador = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Admin
@@ -131,6 +133,16 @@ namespace Administrador_Tareas
             this.Explorador.UseSelectable = true;
             this.Explorador.Click += new System.EventHandler(this.Explorador_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Administrador_Tareas.Properties.Resources.Computadora_cámara_gif_01;
+            this.pictureBox1.Location = new System.Drawing.Point(211, 399);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(257, 231);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // Menu
             // 
             this.ApplyImageInvert = true;
@@ -139,7 +151,8 @@ namespace Administrador_Tareas
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackMaxSize = 5;
-            this.ClientSize = new System.Drawing.Size(643, 537);
+            this.ClientSize = new System.Drawing.Size(643, 639);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Explorador);
             this.Controls.Add(this.btnSwap);
             this.Controls.Add(this.btnHilos);
@@ -156,6 +169,7 @@ namespace Administrador_Tareas
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.GhostWhite;
             this.Load += new System.EventHandler(this.Menu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +184,6 @@ namespace Administrador_Tareas
         private MetroFramework.Controls.MetroButton btnHilos;
         private MetroFramework.Controls.MetroButton btnSwap;
         private MetroFramework.Controls.MetroButton Explorador;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

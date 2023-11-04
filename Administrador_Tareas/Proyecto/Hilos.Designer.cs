@@ -41,6 +41,8 @@ namespace Administrador_Tareas.Proyecto
             this.lblContadorBinario2 = new MetroFramework.Controls.MetroLabel();
             this.lblContadorBinario3 = new MetroFramework.Controls.MetroLabel();
             this.lblContadorBinario4 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -174,11 +176,22 @@ namespace Administrador_Tareas.Proyecto
             this.lblContadorBinario4.TabIndex = 29;
             this.lblContadorBinario4.Text = "Contador";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Administrador_Tareas.Properties.Resources._200;
+            this.pictureBox1.Location = new System.Drawing.Point(619, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(158, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
             // Hilos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 466);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblContadorBinario4);
             this.Controls.Add(this.lblContadorBinario3);
             this.Controls.Add(this.lblContadorBinario2);
@@ -194,6 +207,7 @@ namespace Administrador_Tareas.Proyecto
             this.Name = "Hilos";
             this.Text = "Hilos";
             this.Load += new System.EventHandler(this.Hilos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +227,6 @@ namespace Administrador_Tareas.Proyecto
         private MetroFramework.Controls.MetroLabel lblContadorBinario2;
         private MetroFramework.Controls.MetroLabel lblContadorBinario3;
         private MetroFramework.Controls.MetroLabel lblContadorBinario4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

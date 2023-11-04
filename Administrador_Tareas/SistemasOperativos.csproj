@@ -7,12 +7,13 @@
     <ProjectGuid>{1F0750E8-9F11-47CA-A4DD-E5B7F48BD8AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Administrador_Tareas</RootNamespace>
-    <AssemblyName>Administrador_Tareas</AssemblyName>
+    <AssemblyName>Sistema Operativo SAOM</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Carlos\OneDrive - Universidad Panamericana UPANA\Escritorio\Proyecto\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,6 +47,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>3d_applications_folder_20538.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>50782C8A449841CA6B2069F1E4D401EC85742DEE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SistemasOperativos_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -160,6 +176,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SistemasOperativos_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -197,6 +214,11 @@
     <None Include="Resources\32479561.png" />
     <None Include="Resources\300221.png" />
     <None Include="Resources\60922486-icono-del-sobre-enviar-correo-electrónico-la-muestra-del-mensaje-símbolo-de-correo-de-internet.jpg" />
+    <None Include="Resources\Computadora-cámara_gif_01.gif" />
+    <None Include="Resources\desktop_cb63bc3f-3347-4720-a7d1-478063b4ecd6.gif" />
+    <None Include="Resources\200.gif" />
+    <None Include="Resources\81dd88_46b49b6cdd824c4c99f882a4ccd1c698~mv2.gif" />
+    <Content Include="3d_applications_folder_20538.ico" />
     <Content Include="Resources\FolderIcon.jpg">
       <CustomToolNamespace>FolderIcon</CustomToolNamespace>
     </Content>

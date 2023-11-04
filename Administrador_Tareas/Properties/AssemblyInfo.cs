@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Administrador_Tareas")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Sistema Operativo SAOM")]
+[assembly: AssemblyDescription("Sistema Administrativo de Operaciones Múltiples")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Administrador_Tareas")]
+[assembly: AssemblyProduct("Sistema Operativo SAOM")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

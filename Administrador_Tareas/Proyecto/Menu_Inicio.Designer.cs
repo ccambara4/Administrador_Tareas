@@ -33,14 +33,18 @@ namespace Administrador_Tareas.Proyecto
             this.lblHora = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblFecha = new MetroFramework.Controls.MetroLabel();
+            this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnApagar = new MetroFramework.Controls.MetroButton();
+            this.comboBoxFormularios = new System.Windows.Forms.ComboBox();
+            this.buttonAbrirSolucion = new MetroFramework.Controls.MetroButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Imge = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btnApagar = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -70,14 +74,66 @@ namespace Administrador_Tareas.Proyecto
             this.lblFecha.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblFecha.Location = new System.Drawing.Point(993, 726);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(81, 19);
+            this.lblFecha.Size = new System.Drawing.Size(94, 19);
             this.lblFecha.TabIndex = 3;
             this.lblFecha.Text = "metroLabel1";
+            // 
+            // OpenFileDialog
+            // 
+            this.OpenFileDialog.FileName = "openFileDialog1";
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.BackColor = System.Drawing.Color.Red;
+            this.btnApagar.Location = new System.Drawing.Point(196, 707);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(75, 38);
+            this.btnApagar.TabIndex = 10;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseCustomBackColor = true;
+            this.btnApagar.UseSelectable = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
+            // comboBoxFormularios
+            // 
+            this.comboBoxFormularios.FormattingEnabled = true;
+            this.comboBoxFormularios.Items.AddRange(new object[] {
+            "Menu",
+            "Spotify",
+            "Google Chrome",
+            "Correo",
+            "Word"});
+            this.comboBoxFormularios.Location = new System.Drawing.Point(11, 710);
+            this.comboBoxFormularios.Name = "comboBoxFormularios";
+            this.comboBoxFormularios.Size = new System.Drawing.Size(179, 21);
+            this.comboBoxFormularios.TabIndex = 11;
+            // 
+            // buttonAbrirSolucion
+            // 
+            this.buttonAbrirSolucion.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonAbrirSolucion.Location = new System.Drawing.Point(290, 707);
+            this.buttonAbrirSolucion.Name = "buttonAbrirSolucion";
+            this.buttonAbrirSolucion.Size = new System.Drawing.Size(75, 38);
+            this.buttonAbrirSolucion.TabIndex = 12;
+            this.buttonAbrirSolucion.Text = "Abrir";
+            this.buttonAbrirSolucion.UseCustomBackColor = true;
+            this.buttonAbrirSolucion.UseSelectable = true;
+            this.buttonAbrirSolucion.Click += new System.EventHandler(this.buttonAbrirSolucion_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Administrador_Tareas.Properties.Resources.desktop_cb63bc3f_3347_4720_a7d1_478063b4ecd6;
+            this.pictureBox3.Location = new System.Drawing.Point(937, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(165, 138);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Administrador_Tareas.Properties.Resources.original;
-            this.pictureBox4.Location = new System.Drawing.Point(386, 707);
+            this.pictureBox4.Location = new System.Drawing.Point(629, 707);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 38);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -88,7 +144,7 @@ namespace Administrador_Tareas.Proyecto
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Administrador_Tareas.Properties.Resources._60922486_icono_del_sobre_enviar_correo_electrónico_la_muestra_del_mensaje_símbolo_de_correo_de_internet;
-            this.pictureBox5.Location = new System.Drawing.Point(322, 707);
+            this.pictureBox5.Location = new System.Drawing.Point(565, 707);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 38);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +155,7 @@ namespace Administrador_Tareas.Proyecto
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Administrador_Tareas.Properties.Resources._300221;
-            this.pictureBox6.Location = new System.Drawing.Point(261, 707);
+            this.pictureBox6.Location = new System.Drawing.Point(504, 707);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(39, 38);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +166,7 @@ namespace Administrador_Tareas.Proyecto
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Administrador_Tareas.Properties.Resources._174872;
-            this.pictureBox2.Location = new System.Drawing.Point(203, 707);
+            this.pictureBox2.Location = new System.Drawing.Point(446, 707);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,7 +177,7 @@ namespace Administrador_Tareas.Proyecto
             // Imge
             // 
             this.Imge.Image = global::Administrador_Tareas.Properties.Resources._3767084;
-            this.Imge.Location = new System.Drawing.Point(142, 707);
+            this.Imge.Location = new System.Drawing.Point(385, 707);
             this.Imge.Name = "Imge";
             this.Imge.Size = new System.Drawing.Size(39, 38);
             this.Imge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,27 +194,14 @@ namespace Administrador_Tareas.Proyecto
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // OpenFileDialog
-            // 
-            this.OpenFileDialog.FileName = "openFileDialog1";
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.BackColor = System.Drawing.Color.Red;
-            this.btnApagar.Location = new System.Drawing.Point(-2, 707);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(125, 38);
-            this.btnApagar.TabIndex = 10;
-            this.btnApagar.Text = "Apagar";
-            this.btnApagar.UseCustomBackColor = true;
-            this.btnApagar.UseSelectable = true;
-            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
-            // 
             // Menu_Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 746);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.buttonAbrirSolucion);
+            this.Controls.Add(this.comboBoxFormularios);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
@@ -173,6 +216,7 @@ namespace Administrador_Tareas.Proyecto
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.Menu_Inicio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -197,5 +241,8 @@ namespace Administrador_Tareas.Proyecto
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog;
         private MetroFramework.Controls.MetroButton btnApagar;
+        private System.Windows.Forms.ComboBox comboBoxFormularios;
+        private MetroFramework.Controls.MetroButton buttonAbrirSolucion;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

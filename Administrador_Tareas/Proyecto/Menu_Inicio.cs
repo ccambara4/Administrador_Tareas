@@ -65,5 +65,40 @@ namespace Administrador_Tareas.Proyecto
         {
             Close();
         }
+
+        private void buttonAbrirSolucion_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = comboBoxFormularios.SelectedIndex;
+
+            // Verifica si se ha seleccionado un índice válido en el ComboBox.
+            if (selectedIndex >= 0)
+            {
+                // Abre el formulario correspondiente basado en el índice seleccionado.
+                switch (selectedIndex)
+                {
+                    case 0:
+                        // Abre el formulario "Menu".
+                        Menu menuForm = new Menu();
+                        menuForm.Show();
+                        break;
+                    case 1:
+                        System.Diagnostics.Process.Start("spotify:");
+                        break;
+                    case 2:
+                        System.Diagnostics.Process.Start("chrome");
+                        break;
+                    case 3:
+                        System.Diagnostics.Process.Start("mailto:");
+                        break;
+                    case 4:
+                        System.Diagnostics.Process.Start("winword.exe");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un formulario antes de abrir.");
+            }
+        }
     }
 }

@@ -42,6 +42,8 @@ namespace Administrador_Tareas
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreEstadoTextBox
@@ -97,7 +99,7 @@ namespace Administrador_Tareas
             "ID    Nombre    Estado    Fecha/Hora"});
             this.historialListBox.Location = new System.Drawing.Point(15, 304);
             this.historialListBox.Name = "historialListBox";
-            this.historialListBox.Size = new System.Drawing.Size(491, 132);
+            this.historialListBox.Size = new System.Drawing.Size(491, 340);
             this.historialListBox.TabIndex = 5;
             this.historialListBox.SelectedIndexChanged += new System.EventHandler(this.historialListBox_SelectedIndexChanged);
             // 
@@ -185,12 +187,22 @@ namespace Administrador_Tareas
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Administrador_Tareas.Properties.Resources._81dd88_46b49b6cdd824c4c99f882a4ccd1c698_mv2;
+            this.pictureBox1.Location = new System.Drawing.Point(529, 444);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(259, 194);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // Procesos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 661);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -207,6 +219,7 @@ namespace Administrador_Tareas
             this.Name = "Procesos";
             this.Text = "Procesos";
             this.Load += new System.EventHandler(this.Procesos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +240,6 @@ namespace Administrador_Tareas
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
